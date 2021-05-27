@@ -15,8 +15,9 @@
                 <!-- Curently this will be empty-->
             </div>
 
-            <div>
-                <img src="./images/add_task.png" height="50px" width="80px" onclick="add_new_task();">
+            <div id="add">
+                <input type="text" name="task" id="task"><br>
+                <input type="button" name="add_task" onclick="add_new_task(task.value);" value="Add"> <!-- <img src="./images/add_task.png" height="50px" width="80px" onclick="add_new_task();"> --->
             </div>
         </div>
     </body>
