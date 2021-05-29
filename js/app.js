@@ -1,3 +1,5 @@
+// the id not passing
+
 var list_tasks = [];
 
 function add_new_task(task_content){
@@ -5,6 +7,8 @@ function add_new_task(task_content){
     var block = document.getElementById("tasks");
 
     var t = document.createElement("div");
+
+    t.id = "task" + list_tasks.length;
 
     // Create p & insert values
     var p1 = document.createElement("p");
@@ -25,7 +29,15 @@ function add_new_task(task_content){
 
     del.innerHTML = "Delete";
 
-    del.setAttribute("onclick","delete_task();");
+    // var dele_attribute = "delete_task(" + Number((list_tasks.length)) + ");"
+
+    // var dele_attribute = "delete_task(" + t + ");";
+
+    var dele_attribute = "delete_task(" + (t.id) + ");";
+
+    console.log(t.id);
+
+    del.setAttribute("onclick",dele_attribute);
 
     // Append p1 & del to t
 
@@ -34,13 +46,20 @@ function add_new_task(task_content){
 
     // Append t to block
 
+    list_tasks[list_tasks.length] = t;
+
     block.appendChild(t);
 }
 
 
 // Yet to be d
-function delete_task(){
+function delete_task(num){
     console.log("You are in delete task function");
+    console.log(String(num));
+    console.log("sdfsdf");
 
-    ele.remove();
+    // var ele = document.getElementById(num);
+
+    // console.log(ele);
+    num.remove();
 }
