@@ -7,6 +7,7 @@ function add_new_task(task_content){
     // Create a <li> list item
     var li = document.createElement("li");
     li.id = "task" + cnt_tasks;
+    li.type = "None";
 
     // Create task div & define attributes
     var t = document.createElement("div");
@@ -33,6 +34,9 @@ function add_new_task(task_content){
 
     // Append li to block
     block.appendChild(li);
+
+    var br = document.createElement("br");
+    block.appendChild(br);
 }
 
 function delete_task(num){
