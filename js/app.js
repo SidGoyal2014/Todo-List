@@ -164,6 +164,16 @@ function create_task(task_id,task_name, block){
 }
 
 function delete_task(num){
+    var ele = document.getElementById(num);
     console.log("num : ", num);
-    num.remove();
+    // ele.remove();
+
+    /*
+    var abcd = '"' + num + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;" + '"';
+    console.log(abcd);
+    */
+
+    document.cookie = num + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    ele.remove();
 }
